@@ -1,8 +1,232 @@
-// Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
-// Variables
 @import 'variables';
-
-// Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+// ======================================================
+//  Tema "Almacén": papel crema, tinta verde y terracota
+// ======================================================
+:root {
+    --tinta: #1f2a24;
+    --papel: #f5efe4;
+    --hoja: #fffdf8;
+    --musgo: #2f5d50;
+    --acento: #b7421f;
+}
+
+body {
+    background-color: var(--papel);
+    background-image: radial-gradient(rgba(31, 42, 36, .09) 1px, transparent 1px);
+    background-size: 22px 22px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+// ---- Navbar ----
+.navbar {
+    border-bottom: 2px solid var(--tinta);
+}
+
+.navbar-brand {
+    font-family: $headings-font-family;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+
+    .punto {
+        color: #e8795a;
+    }
+}
+
+.marca {
+    display: inline-grid;
+    place-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1.05rem;
+    color: #fff;
+    background: var(--acento);
+    border-radius: .55rem;
+    transform: rotate(-6deg);
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+
+    &.active {
+        color: #fff;
+        box-shadow: inset 0 -2px 0 #e8795a;
+    }
+}
+
+// ---- Títulos ----
+.titulo {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -.02em;
+
+    .resalte {
+        background: linear-gradient(transparent 62%, rgba(183, 66, 31, .28) 62%);
+        padding: 0 .15em;
+    }
+}
+
+// ---- Tarjetas ----
+.card {
+    background: var(--hoja);
+    border: 2px solid var(--tinta);
+    border-radius: $border-radius-lg;
+    box-shadow: 5px 5px 0 var(--tinta);
+    overflow: hidden;
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 2px solid var(--tinta);
+}
+
+// ---- Botones ----
+.btn {
+    --bs-btn-border-width: 2px;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btn-primary,
+.btn-success,
+.btn-danger,
+.btn-secondary {
+    --bs-btn-border-color: #1f2a24;
+    --bs-btn-hover-border-color: #1f2a24;
+    --bs-btn-active-border-color: #1f2a24;
+}
+
+.btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 var(--tinta);
+}
+
+.btn:active {
+    transform: none;
+    box-shadow: none;
+}
+
+// ---- Tabla tipo libro de registro ----
+.table {
+    --bs-table-bg: transparent;
+
+    thead th {
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+        color: #5c635d;
+        background: #f1e9d8;
+        border-bottom: 2px solid var(--tinta);
+        padding-top: .85rem;
+        padding-bottom: .85rem;
+    }
+
+    td {
+        padding-top: .9rem;
+        padding-bottom: .9rem;
+    }
+}
+
+.table-hover {
+    --bs-table-hover-bg: rgba(183, 66, 31, .07);
+}
+
+.precio {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.codigo {
+    font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+    font-size: .85rem;
+    color: #6b6f68;
+}
+
+// ---- Etiqueta de categoría ----
+.etiqueta {
+    display: inline-block;
+    padding: .3em .8em;
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--musgo);
+    background: rgba(47, 93, 80, .12);
+    border: 1px solid rgba(47, 93, 80, .3);
+    border-radius: 999px;
+}
+
+// ---- Formularios ----
+.form-label {
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+    border-width: 2px;
+}
+
+.input-group-text {
+    background: #f1e9d8;
+    font-weight: 700;
+}
+
+// ---- Alertas y modal ----
+.alert {
+    color: var(--tinta);
+    border: 2px solid var(--tinta);
+    border-radius: $border-radius;
+    box-shadow: 4px 4px 0 var(--tinta);
+}
+
+.alert-success {
+    background: #dcebd9;
+}
+
+.modal-content {
+    background: var(--hoja);
+    border: 2px solid var(--tinta);
+    border-radius: $border-radius-lg;
+    box-shadow: 8px 8px 0 var(--tinta);
+}
+
+.modal-header,
+.modal-footer {
+    border-color: var(--tinta);
+}
+
+// ---- Pie ----
+.pie {
+    color: #6b6f68;
+    font-size: .8rem;
+}
+
+// ---- Entrada suave ----
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+main>* {
+    animation: subir .45s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main>* {
+        animation: none;
+    }
+
+    .btn {
+        transition: none;
+    }
+}

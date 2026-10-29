@@ -1,7 +1,30 @@
-// Body
-$body-bg: #f8fafc;
+// Paleta "Almacén"
+$ink: #1f2a24;
+$paper: #f5efe4;
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$primary: #2f5d50;
+$secondary: #6b6f68;
+$success: #3f7d4e;
+$danger: #b7421f;
+$warning: #d9a441;
+$info: #3b7a8c;
+$light: #efe7d6;
+$dark: $ink;
+
+$body-bg: $paper;
+$body-color: $ink;
+
+$font-family-sans-serif: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$headings-font-family: 'Fraunces', Georgia, serif;
+$headings-font-weight: 600;
+
+$border-radius: .75rem;
+$border-radius-sm: .5rem;
+$border-radius-lg: 1rem;
+$border-color: #d9cfba;
+
+$input-bg: #fffdf8;
+$input-border-color: #c9bda4;
+$input-focus-border-color: #2f5d50;
+$input-btn-focus-color: rgba(47, 93, 80, .22);
+$btn-font-weight: 600;
